@@ -24,7 +24,7 @@ class ProductFactory extends Factory
             "image" => $this->faker->imageUrl(),
             "date" => $this->faker->date(),
             "time" => $this->faker->time(),
-            "capability" => $this->faker->numberBetween($min = 1, $max = 10),
+            "capacity" => $this->faker->numberBetween($min = 1, $max = 10),
             "featured" => $this->faker->boolean(),
         ];
     }

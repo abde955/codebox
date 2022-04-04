@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://via.placeholder.com/150',
             'date' => '2020-01-01',
             'time' => '10:00:00',
-            'capability' => '1',
+            'capacity' => '1',
             'featured' => '1',
         ]);
         Product::factory(15)->create();

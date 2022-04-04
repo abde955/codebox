@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('image', 255);
             $table->date('date');
             $table->time('time');
-            $table->integer('capability');
+            $table->integer('capacity');
             $table->boolean('featured')->default(false);
             $table->timestamps();
         });

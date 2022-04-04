@@ -16,7 +16,7 @@ class Product extends Model
         'image',
         'date',
         'time',
-        'capability',
+        'capacity',
         'featured',
     ];
 }
