@@ -40,6 +40,20 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="verify_email" class="col-md-4 col-form-label text-md-end">{{ __('Verify Email') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="verify_email" type="verify_email" class="form-control @error('verify_email') is-invalid @enderror" name="verify_email" value="{{ old('verify_email') }}" required autocomplete="verify_email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
