@@ -20,8 +20,8 @@ return new class extends Migration
             $table->text('about')->nullable();
             $table->time('hour');
             $table->date('date');
-            $table->boolean('featured')->nullable();
-            $table->integer('ability')->nullable();
+            $table->boolean('featured')->default(false);
+            $table->integer('capability')->nullable();
             $table->timestamps();
         });
     }
