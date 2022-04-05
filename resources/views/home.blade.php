@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-<section class= " flex flex-row justify-arround flex-wrap">
+<!-- meter el header de componentes -->
+
+<section class="carrousel-section">
+    <!-- PARA EL CARROUSELL -->
+</section>
+
+<section class= "product-card-section flex flex-row justify-arround flex-wrap">
 
     @section ('content')
 
