@@ -2,6 +2,7 @@
 
 @section('content')
 
-    @foreach
+    @foreach($products -> $product)
+    <p>{{$product -> name}}</p>
 
 @endsection
