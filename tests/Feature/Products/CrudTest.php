@@ -29,4 +29,16 @@ class CrudTest extends TestCase
         
     
     }
+
+   /*  public function test_a_product_can_be_deleted()
+
+    {
+        $this->withExceptionHandling();
+
+        $product = Product::factory()->create();
+        $this->assertCount(1, Product::all());
+        
+        $this->delete(route('delete', $product->id));
+        $this->assertCount(0, Product::all());
+    } */
 }
