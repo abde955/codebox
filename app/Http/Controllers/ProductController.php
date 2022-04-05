@@ -62,6 +62,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        $product = Product::find($id);
+        return view('edit', compact('product'));
     }
 
     /**
@@ -74,6 +76,10 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $changeProduct = request()->except(['_token', '_method']);
+        Product::where('id', '=', $id)->update($changeProduct);
+
+        return redirect()->route('home');
     }
 
     /**

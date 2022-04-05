@@ -15,6 +15,7 @@ class CrudTest extends TestCase
      * @return void
      */
     use RefreshDatabase;
+
     public function test_list_product_appear_in_home()
 
     {
@@ -30,7 +31,7 @@ class CrudTest extends TestCase
     
     }
 
-    public function test_a_product_can_be_deleted()
+    /*  public function test_a_product_can_be_deleted()
 
     {
         $this->withExceptionHandling();
@@ -40,5 +41,23 @@ class CrudTest extends TestCase
         
         $this->delete(route('delete', $product->id));
         $this->assertCount(0, Product::all());
+    } */
+
+    public function test_a_product_can_be_updated() {
+        $this->withExceptionHandling();
+
+        $product = Product::factory()->create();
+        $this->assertCount(1, Product::all());
+
+        $this->patch(route('update', $product->id), ['name' => 'New Name']);
+
+        $this->assertEquals(Product::first()->name, 'New Name');
+        
+        
+        //'description' => 'New Description',
+            //'price' => 'New Price',
+            // 'stock' => 'New Stock',
+            //'category_id' => 'New Category',
+            //'image' => 'New Image',
     }
 }
