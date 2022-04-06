@@ -1,1 +1,1 @@
-<!--
+<!-- animación de la pagina de entrada -->

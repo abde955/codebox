@@ -12,7 +12,7 @@
 
     @section ('content')
 
-        @foreach ($products as $product)
+    @foreach ($products as $product)
 
     <section class="pt-20 lg:pt-[120px] pb-10 lg:pb-20 bg-[#F3F4F6]">
         <div class="container">
@@ -26,9 +26,19 @@
                                 </a>
                             </h3>
                             <p class="text-base text-body-color leading-relaxed mb-7">{{$product -> description}}</p>
-                            <a href="javascript:void(0)" class="inline-block py-2 px-7 border border-[#E5E7EB] rounded-full text-base text-body-color font-medium hover:border-primary hover:bg-primary hover:text-white transition">
-                                View Details
-                            </a>
+                            <form action="{{ route('delete', ['id' => $product->id]) }}" method="post">
+                                @method ('delete')
+                                @csrf 
+                                <button type="submit" onclick="return confirm('Está seguro que desea eliminar el evento {{$product -> name}}?')">
+                                    Eliminar
+                                </button>
+                            </form>
+                                    <a href="{{ route('edit', ['id' => $product->id]) }}">
+                                        <button type='button' class="text-withe py-3 px-4 rounded-lg bg-blue-500">
+                                            <p class="work-sans font-semibol text-sm tracking-wide"> Editar</p>
+                                        </button>
+                                    </a>
+                            
                             <!--buttons-->
                         </div>
                     </div>
@@ -38,9 +48,9 @@
     </section>
 
 
-        @endforeach
+    @endforeach
 
-        {{$products -> links()}}
+    {{$products -> links()}}
 
     @endsection
 
